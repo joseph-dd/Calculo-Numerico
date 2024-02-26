@@ -1,6 +1,6 @@
 import math
 
-def trapecio(func, a, b, n):
+def riemann(func, a, b, n):
     # Calcula el ancho de cada subintervalo
     h = (b - a) / n
 
@@ -10,10 +10,10 @@ def trapecio(func, a, b, n):
     # Inicializa la variable x con el límite inferior del intervalo
     x = a
 
-    # Itera a través de los subintervalos y aplica la regla del trapecio
+    # Itera a través de los subintervalos y aplica la regla de Riemann
     for i in range(n):
-        # Calcula el área del trapecio y lo agrega a la acumuladora
-        acum += ((func(x) + func(x + h)) * h) / 2
+        # Calcula el área de la región rectangular y lo agrega a la acumuladora
+        acum += func(x) * h
 
         # Actualiza la posición de x para el siguiente subintervalo
         x += h
